@@ -54,7 +54,7 @@ if __name__ == "__main__":
         try_time += 1
         for courseID in courseList:
             print(WARNING + "Select course %s" % courseID)
-            iCracker.selectCourse(courseID)
+            print(iCracker.selectCourse(courseID))
             time.sleep(4)
 
 

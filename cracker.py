@@ -62,7 +62,7 @@ class Cracker(object):
         loginData = {
             "username": self._user,
             "password": self._password,
-            "j_code": raw.replace(" ", "").replace("]", "J"),
+            "j_code": raw.replace(" ", "").replace("]", "J").replace("5", "S"),
             "lt":"",
             "_eventId":"submit",
             "gateway":"true"
@@ -94,3 +94,10 @@ class Cracker(object):
         start = txt.find("<textarea>")
         end = txt.find("</textarea>")
         txt = txt[start + len("<textarea>"):end]
+        infoData = json.loads(txt)
+        if infoData["err"]["code"] == 0:
+            return "select %s successfully" % str(courseID)
+        elif infoData["err"]["caurse"]:
+            return infoData["err"]["caurse"]
+        else:
+            return "select %s failed" % str(courseID)
