@@ -76,7 +76,7 @@ class Cracker(object):
             return False
 
     """
-    : @return True/False depends on select status
+    : @return selection status
     """
     def selectCourse(self, courseID):
         selectData = {
