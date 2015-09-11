@@ -15,9 +15,11 @@ if you are using python2.x, make some changes in runner.py and cracker.py, and i
 	cd crack-sysu-uems
 	
 	# for OSX
+	sudo pip install Pillow
 	brew install tesseract
 	
 	# for Debian/Ubuntu
+	sudo pip install Pillow
 	sudo apt-get install tesseract-ocr
 	
 	# for windows:
