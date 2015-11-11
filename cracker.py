@@ -53,16 +53,16 @@ class Cracker(object):
         req = self._session.get("http://uems.sysu.edu.cn/elect/login/code", stream=True)
         im = Image.open(req.raw)
         im = im.convert('L')
-        im = im.point(lambda x:255 if x > 128 or x==0 else x)
+        im = im.point(lambda x:255 if x > 128 else x)
         im = im.point(lambda x:0 if x < 255 else 255)
-        box = (3, 3, im.size[0] - 3, im.size[1] - 3)
+        box = (2, 2, im.size[0] - 2, im.size[1] - 2)
         im = im.crop(box)
 
         raw = pytesseract.image_to_string(im, lang="eng", config="-psm 7")
         loginData = {
             "username": self._user,
             "password": self._password,
-            "j_code": raw.replace(" ", "").replace("]", "J").replace("5", "S"),
+            "j_code": raw.replace(" ", "").replace("]", "J"),
             "lt":"",
             "_eventId":"submit",
             "gateway":"true"

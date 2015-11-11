@@ -1,13 +1,14 @@
+# coding=utf-8
 from cracker import Cracker
 import getpass
 import time
 
-HEADER = '\033[95m'                                                        
-OKBLUE = '\033[94m'                                                        
-OKGREEN = '\033[92m'                                                       
-WARNING = '\033[93m'                                                       
-FAIL = '\033[91m'                                                          
-ENDC = '\033[0m' 
+HEADER = '\033[95m'
+OKBLUE = '\033[94m'
+OKGREEN = '\033[92m'
+WARNING = '\033[93m'
+FAIL = '\033[91m'
+ENDC = '\033[0m'
 UNDERLINE = '\33[4m'
 
 if __name__ == "__main__":
@@ -56,7 +57,3 @@ if __name__ == "__main__":
             print(WARNING + "Select course %s" % courseID)
             print(iCracker.selectCourse(courseID))
             time.sleep(4)
-
-
-
-
