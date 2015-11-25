@@ -32,6 +32,3 @@ if you are using python2.x, make some changes in runner.py and cracker.py, and i
 
 ### HOW TO USE
 	python3 runner.py
-	
-### Screenshot
-![](http://www.lsich.com/resource/crack_sysu_uems.png)
